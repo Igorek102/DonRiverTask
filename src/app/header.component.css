@@ -1,0 +1,58 @@
+.welcome {
+  font-size: 11pt;
+}
+hr {
+  margin-top: -3px;
+  margin-bottom: 1px;
+  height: 1px;
+}
+.navbar {
+  padding: 0;
+}
+.top {
+  margin-left: -20px;
+}
+a {
+  cursor: pointer;
+}
+.dropdown {
+  margin-right: 20px;
+}
+.dropdown-menu {
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  width: 150px;
+  border: none;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
+}
+.drop-btn {
+  background-color: cornflowerblue!important;
+  border-top: 1px solid royalblue!important;
+}
+.drop-btn:hover {
+  background-color: dodgerblue!important;
+}
+
+.ui-button-primary {
+  background-color: royalblue!important;
+}
+.ui-button-primary:hover {
+  background-color: blue!important;
+}
+.ui-button-primary:active {
+  background-color: #1F497D!important;
+}
+.fa-sort-desc {
+  margin-top: -12px!important;
+}
+#menuBtn:focus {
+  background-color: #1F497D!important;
+}
+img {
+  width: 40px;
+  margin-right: 20px;
+}
+span.EmailStyle17 {
+  width: 600px;
+}

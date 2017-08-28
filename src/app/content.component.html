@@ -1,0 +1,71 @@
+<div id="content">
+  <div class="mb-2 text-white">
+    <h6>{{filename}}</h6>
+    <a (click)="showDialogToExport()"><img src="./assets/xls.icon" class="float-right"/></a>
+  </div>
+  <div id="tbl">
+    <div style="display: inline" class="float-right">
+      <button pButton label="AddRow" class="ui-button-primary addRowBtn" type="button" (click)="showDialogToAdd()"></button>
+    </div>
+    <p-tabView (onChange)="onTabChange($event)">
+      <p-tabPanel header="NBN National APHT (SIO)" headerStyleClass="panelHeader">
+        <p-dataTable [value]="curRows" selectionMode="single" [(selection)]="selectedRow" [contextMenu]="cm" [rowStyleClass]="rowBgColor">
+          <p-column *ngFor="let col of cols" [field]="col.fld" [header]="col.hdr"></p-column><
+        </p-dataTable>
+      </p-tabPanel>
+      <p-tabPanel header="DSL National APHT (SIO)" headerStyleClass="panelHeader" >
+        <p-dataTable [value]="curRows" selectionMode="single" [(selection)]="selectedRow" [contextMenu]="cm" [rowStyleClass]="rowBgColor">
+          <p-column *ngFor="let col of cols" [field]="col.fld" [header]="col.hdr"></p-column>
+        </p-dataTable>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+
+</div>
+
+<p-contextMenu #cm [model]="menuItems"></p-contextMenu>
+<p-dialog header="Row Editor" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+  <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="row">
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-2"><label for="isp">ISP</label></div>
+      <div><input pInputText id="isp" [(ngModel)]="row.isp" /></div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-2"><label for="fnn">FNN Number</label></div>
+      <div><input pInputText id="fnn" [(ngModel)]="row.fnn" /></div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-2"><label for="pb">Peak Bandwidth</label></div>
+      <div><input pInputText id="pb" [(ngModel)]="row.pb" /></div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-2"><label for="nSio">Network SIO</label></div>
+      <div><input pInputText id="nSio" [(ngModel)]="row.nSio" /></div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-2"><label for="kbps">Kbps/SIO</label></div>
+      <div><input pInputText id="kbps" [(ngModel)]="row.kbps" /></div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-2"><label for="curTier">Current Tier</label></div>
+      <div><input pInputText id="curTier" [(ngModel)]="row.curTier" /></div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-2"><label for="lastMonthTier">Last Month Tier</label></div>
+      <div><input pInputText id="lastMonthTier" [(ngModel)]="row.lastMonthTier" /></div>
+    </div>
+  </div>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+    </div>
+  </p-footer>
+</p-dialog>
+
+<p-dialog [(visible)]="exportDialog" [modal]="true" [closable]="false" header='Export Table'>
+  Filename: <input pInputText [(ngModel)]="downfilename" class="flname"/><br/><br/>
+  <div>
+    <button pButton label="Save" (click)="tableToExcel()"></button>
+    <button pButton label="Cancel" (click)="hideDialogToExport()"></button>
+  </div>
+</p-dialog>

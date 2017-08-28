@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face
+{font-family:Helvetica;
+  panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+{font-family:"Cambria Math";
+  panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+{font-family:Calibri;
+  panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{margin:0cm;
+  margin-bottom:.0001pt;
+  font-size:12.0pt;
+  font-family:"Times New Roman",serif;}
+a:link, span.MsoHyperlink
+{mso-style-priority:99;
+  color:blue;
+  /*text-decoration:underline;*/
+}
+a:visited, span.MsoHyperlinkFollowed
+{mso-style-priority:99;
+  text-decoration:underline;}
+span.EmailStyle17
+{mso-style-type:personal;
+  font-family:"Calibri",sans-serif;
+  color:#1F497D;}
+span.EmailStyle18
+{mso-style-type:personal-reply;
+  font-family:"Calibri",sans-serif;
+  color:#1F497D;}
+.MsoChpDefault
+{mso-style-type:export-only;
+  font-size:10.0pt;}
+@page WordSection1
+{size:612.0pt 792.0pt;
+  margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+{page:WordSection1;}
+
+div#root {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 15px;
+}
+.ui-button, .drop-btn{
+  border-radius: 0!important;
+  color: white;
+  width: 150px;
+  height: 35px;
+  cursor: pointer;
+}
+
+
+
+

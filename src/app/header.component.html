@@ -1,0 +1,35 @@
+<div class="navbar">
+  <span class="EmailStyle17 top">
+    <img src="./assets/logo.icon" class="float-left"/>
+    <h1 class="font-weight-bold">Wholesale Access Interface</h1>
+  </span>
+  <span class="text-primary welcome">Welcome Troy Giorgio |
+    <a (click)="onLogout()" style="text-decoration: underline!important;">Logout</a>
+  </span>
+</div>
+<hr class="border border-secondary rounded">
+<div class="navbar">
+   <button pButton label="Home" class="ui-button-primary" type="button"></button>
+   <div>
+     <div class="dropdown show float-left">
+       <button pButton class="ui-button-primary" icon="fa-sort-desc" iconPos="right" label="Menu"
+               id="dropdownMenu" data-toggle="dropdown" id="menuBtn"></button>
+       <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+         <button pButton label="{{btnNames[0]}}" class="drop-btn" (click)="confirm(0)"></button>
+         <button pButton label="{{btnNames[1]}}" class="drop-btn" (click)="confirm(1)"></button>
+         <button pButton label="{{btnNames[2]}}" class="drop-btn" (click)="confirm(2)"></button>
+       </div>
+     </div>
+     <button pButton label="Back" class="ui-button-primary"></button>
+   </div>
+</div>
+<p-dialog header="Info" [(visible)]="displayInfo" [modal]="true" [closable]="false">
+  There is no way to close a web browser tab or window. Modern security standards do not permit this behavior.<br /><br/>
+  <button pButton label="Ok" (click)="closeDialog()"></button>
+</p-dialog>
+<p-confirmDialog [closable]="false" key='logout'></p-confirmDialog>
+<p-confirmDialog [closable]="false" key='conf' acceptLabel="Ok"></p-confirmDialog>
+
+
+
+
